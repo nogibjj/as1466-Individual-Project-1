@@ -1,25 +1,20 @@
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+		pip install --prefer-binary -r requirements.txt
 
-test:
-	python -m pytest -vv --cov=main --cov=mylib test_*.py
+test:	
+	python -m py.test --nbval jupyter_notebook/*.ipynb 
+	python -m py.test -vv --cov=python_script python_script/*.py
+	python -m py.test -vv --cov=lib
 
-format:	
-	black *.py 
+format:
+	nbqa black  \jupyter_notebook/*.ipynb &&\
+		black \python_script/*.py &&\
+			black \src/*.py
 
 lint:
-	#disable comment to test speed
-	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py mylib/*.py
-	#ruff linting is 10-100X faster than pylint
-	ruff check *.py mylib/*.py
+	nbqa ruff \jupyter_notebook/*.ipynb &&\
+		ruff check \python_script/*.py &&\
+			ruff check \src/*.py
 
-container-lint:
-	docker run --rm -i hadolint/hadolint < Dockerfile
-
-refactor: format lint
-
-deploy:
-	#deploy goes here
-		
-all: install lint test format deploy
+all: install test format lint
