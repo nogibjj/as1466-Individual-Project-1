@@ -171,9 +171,9 @@ def distribution_analytics(rev1,rev2, types):
 
  
 
-  fig1 = px.box(plot_df1, x="label", y="metric", points="all", title=title)
+  # fig1 = px.box(plot_df1, x="label", y="metric", points="all", title=title)
 
-  fig1.show()
+  # fig1.show()
 
   plt.figure(figsize=(8, 6))
   sns.boxplot(data=plot_df1, x="label", y="metric")
@@ -194,9 +194,9 @@ def distribution_analytics(rev1,rev2, types):
 
   cdf = cdf.sort_values(['label','metric'])
 
-  fig  = px.line(cdf, x= 'metric', y = 'cumsum', color = 'label',title=title)
+  # fig  = px.line(cdf, x= 'metric', y = 'cumsum', color = 'label',title=title)
 
-  fig.show()
+  # fig.show()
   plt.figure(figsize=(8, 6))
   sns.lineplot(data=cdf, x='metric', y='cumsum', hue='label')
   plt.title(title)
@@ -213,11 +213,11 @@ def distribution_analytics(rev1,rev2, types):
 
   group_labels = ['Group1', 'Group2']
 
-  fig = ff.create_distplot(hist_data, group_labels, bin_size=freq)
+  # fig = ff.create_distplot(hist_data, group_labels, bin_size=freq)
 
-  fig.update_layout(title=title)
+  # fig.update_layout(title=title)
 
-  fig.show()
+  # fig.show()
     # Assuming hist_data is a list of NumPy arrays, group_labels is a list of labels,
   # and freq is the bin size
   fig, ax = plt.subplots(figsize=(8, 6))
