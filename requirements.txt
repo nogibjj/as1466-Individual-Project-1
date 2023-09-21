@@ -20,3 +20,5 @@ ruff
 nbval
 nbqa
 ipynb
+plotly
+plotly.express
