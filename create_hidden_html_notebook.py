@@ -6,8 +6,8 @@ def create_hidden_html_notebook(notebook_path, output_path):
     with open(notebook_path, 'r', encoding='utf-8') as nb_file:
         notebook = nbformat.read(nb_file, as_version=4)
 
-    # Create an ExecutePreprocessor and specify the kernel name (e.g., 'python3')
-    executor = ExecutePreprocessor(timeout=None, kernel_name='python3')
+    # Create an ExecutePreprocessor and specify the available kernel name
+    executor = ExecutePreprocessor(timeout=None, kernel_name='python3.10.8')
     executor.preprocess(notebook, {'metadata': {'path': ''}})
 
     # Remove code cells
