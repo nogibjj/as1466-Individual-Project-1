@@ -18,10 +18,14 @@ jobs:
           pip install nbformat nbconvert  # Install nbformat and nbconvert if not already installed
           python create_hidden_html_notebook.py
 
-      - name: Commit and push changes
+      - name: Check if there are changes to commit
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add main_output.html
-          git commit -m "Create Hidden HTML Notebook"
-          git push
+          if [[ -n $(git status --porcelain) ]]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add main_output.html
+            git commit -m "Create Hidden HTML Notebook"
+            git push
+          else
+            echo "No changes to commit."
+          fi
