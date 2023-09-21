@@ -1,6 +1,7 @@
 #datascience
 jupyter==1.0.0
-pandas==1.5.0
+pandas
+pyarrow
 numpy==1.23.3
 scikit-learn==1.1.2
 matplotlib==3.6.0
@@ -18,3 +19,4 @@ uvicorn==0.18.3
 ruff==0.0.290
 nbval==0.10.0
 nbqa==1.7.0
+ipynb
