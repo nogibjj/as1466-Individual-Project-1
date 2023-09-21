@@ -20,4 +20,4 @@ ruff
 nbval
 nbqa
 ipynb
-json
+#json
