@@ -21,6 +21,5 @@ nbval
 nbqa
 ipynb
 #json
-json
 plotly
 scipy
