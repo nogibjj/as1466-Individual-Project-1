@@ -23,3 +23,5 @@ ipynb
 #json
 plotly
 scipy
+nbformat
+nbconvert
