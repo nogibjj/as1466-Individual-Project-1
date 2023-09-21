@@ -25,5 +25,8 @@ This repo contains of :
 * [![Format](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/Format.yml/badge.svg)](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/Format.yml) - code formatting
 * [![Lint](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/Lint.yml/badge.svg)](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/Lint.yml) - Lint
 * [![Test](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/Test.yml/badge.svg)](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/Test.yml) - testing code including testing all py scripts and ipynb file via nbval ext.
-* [![add_commit_push](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/add_commit_push.yml/badge.svg)](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/add_commit_push.yml) - updating repo with new dataframes. 
+* [![add_commit_push](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/add_commit_push.yml/badge.svg)](https://github.com/nogibjj/as1466-Individual-Project-1/actions/workflows/add_commit_push.yml) - updating repo with new dataframes.
+
+## Demo
+[Youtube Link](https://youtu.be/0qM1oqan5do)
 
