@@ -28,7 +28,7 @@ jobs:
 
     - name: Run Notebook
       run: |
-        jupyter nbconvert --execute --to notebook --inplace notebook.ipynb
+        jupyter nbconvert --execute --to notebook --inplace main.ipynb
       # Replace 'notebook.ipynb' with the path to your notebook.
 
     - name: Check for changes
