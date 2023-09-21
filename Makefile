@@ -17,3 +17,14 @@ lint:
 	ruff check *.py
 		
 all: install lint test format
+
+add_commit_push:
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		git config --local user.email "action@github.com"; \
+		git config --local user.name "GitHub Action"; \
+		git add pairplot.png boxplots.png Statistics_report.md; \
+		git commit -m "Add generated plot image"; \
+		git push; \
+	else \
+		echo "No changes to commit. Skipping commit and push."; \
+	fi
