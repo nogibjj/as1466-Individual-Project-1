@@ -1,20 +1,17 @@
 install:
 	pip install --upgrade pip &&\
-		pip install --prefer-binary -r requirements.txt
+		pip install -r requirements.txt
 
-test:	
-	python -m py.test --nbval *.ipynb 
-	python -m py.test -vv --cov=python_script *.py
-	python -m py.test -vv --cov=lib
+test:
+	python -m pytest --nbval *.ipynb
+	python -m pytest -vv --cov=.lib
 
-format:
-	nbqa black  \jupyter_notebook/*.ipynb &&\
-		black \python_script/*.py &&\
-			black \src/*.py
+format:	
+	black *.py
+	nbqa black *.ipynb 
 
 lint:
-	nbqa ruff \jupyter_notebook/*.ipynb &&\
-		ruff check \python_script/*.py &&\
-			ruff check \src/*.py
-
-all: install test format lint
+	nbqa ruff *.ipynb
+	ruff check *.py
+		
+all: install lint test format
