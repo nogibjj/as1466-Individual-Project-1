@@ -3,7 +3,7 @@ from nbconvert import HTMLExporter
 from nbconvert.preprocessors import ExecutePreprocessor
 
 def create_hidden_html_notebook(notebook_path, output_path):
-    with open(notebook_path, 'r', encoding='utf-8') as nb_file:
+    with open('main.ipynb', 'r', encoding='utf-8') as nb_file:
         notebook = nbformat.read(nb_file, as_version=4)
 
     # Create an ExecutePreprocessor and specify the available kernel name
