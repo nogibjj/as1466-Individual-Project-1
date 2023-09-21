@@ -1,7 +1,10 @@
 import pandas as pd
 from mylib.lib import unpack_json, merge_dfs
 '''
-Python script ties json functions from the lib library and creates new df that will be better used in jupyter notebook that will perform vizualization analytics
+Python script ties json functions 
+from the lib library and creates new df that will be 
+better used in jupyter notebook that will 
+perform vizualization analytics
 '''
 def make_whole_df(df):
   '''
