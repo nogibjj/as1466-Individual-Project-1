@@ -56,7 +56,6 @@ def make_whole_df(df):
   # Reorder columns to match the order in which they were encountered
   unpacked_df = unpacked_df[columns]
   df = merge_dfs(df, unpacked_df)
-  df.to_csv('updated_BQ.csv')
   return df
 
 """# Summary and basic statisticts"""
@@ -66,4 +65,5 @@ df.head(3)
 df = df.iloc[:,:]
 
 df  = make_whole_df(df)
+df.to_csv('updated_BQ.csv')
 
