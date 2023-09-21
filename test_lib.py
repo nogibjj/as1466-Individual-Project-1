@@ -1,4 +1,4 @@
-from lib import sum
+from mylib.lib import sum
 
 def test_main():
     assert sum(1,2) == 3
