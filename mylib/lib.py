@@ -234,43 +234,43 @@ def distribution_analytics(rev1,rev2, types):
 
   #statistical tests
 
-  print('T test results')
+  # print('T test results')
 
-  k = rev2.mean() - rev1.mean()
+  # k = rev2.mean() - rev1.mean()
 
-  print(k/rev1.mean()*100,'%uplift of the average from group1')
+  # print(k/rev1.mean()*100,'%uplift of the average from group1')
 
-  j = stats.ttest_ind(rev1, rev2, equal_var =False)
+  # j = stats.ttest_ind(rev1, rev2, equal_var =False)
 
-  print(stats.ttest_ind(rev1, rev2, equal_var =False))
+  # print(stats.ttest_ind(rev1, rev2, equal_var =False))
 
-  print((1-j.pvalue)*100,'% confidence')
+  # print((1-j.pvalue)*100,'% confidence')
 
-  print('')
+  # print('')
 
-  print('Mann whitney results')
+  # print('Mann whitney results')
 
-  k = (rev2.median() - rev1.median())/rev1.median()*100
+  # k = (rev2.median() - rev1.median())/rev1.median()*100
 
-  print('Uplift of the median value from group1 to group2:',k,'%')
+  # print('Uplift of the median value from group1 to group2:',k,'%')
 
-  test = stats.mannwhitneyu(rev1, rev2)
+  # test = stats.mannwhitneyu(rev1, rev2)
 
-  print(test)
+  # print(test)
 
-  print((1-test.pvalue)*100,'% confidence')
-
- 
-
-  print(rev1.mean(),'Group 1 Average')
-
-  print(rev2.mean(), 'Group 2 Average')
+  # print((1-test.pvalue)*100,'% confidence')
 
  
 
-  print(rev1.median(), 'Group 1 Median')
+  # print(rev1.mean(),'Group 1 Average')
 
-  print(rev2.median(), 'Group 2 Median')
+  # print(rev2.mean(), 'Group 2 Average')
+
+ 
+
+  # print(rev1.median(), 'Group 1 Median')
+
+  # print(rev2.median(), 'Group 2 Median')
 
 
 #weighted T-test
