@@ -10,7 +10,8 @@ def make_whole_df(df):
   '''
   This function wraps up json unpacking, creates updated df and writes new csv file
   '''
-  df = df[['visitId','visitStartTime','date','totals','device','channelGrouping','fullVisitorId']]
+  df = df[['visitId','visitStartTime','date','totals','device',
+           'channelGrouping','fullVisitorId']]
     #adding totals data
   # Create an empty list to store column names and data
   columns = []
