@@ -1,0 +1,27 @@
+name: Create Hidden HTML Notebook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_hidden_html_notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Python Script
+        run: |
+          pip install nbformat nbconvert  # Install nbformat and nbconvert if not already installed
+          python create_hidden_html_notebook.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add main_output.html
+          git commit -m "Create Hidden HTML Notebook"
+          git push
