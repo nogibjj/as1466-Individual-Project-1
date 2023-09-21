@@ -4,6 +4,8 @@ import numpy as np
 import plotly.express as px
 import plotly.figure_factory as ff
 from scipy import stats
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def unpack_json(json_str, column_name):
     '''
@@ -173,6 +175,11 @@ def distribution_analytics(rev1,rev2, types):
 
   fig1.show()
 
+  plt.figure(figsize=(8, 6))
+  sns.boxplot(data=plot_df1, x="label", y="metric")
+  plt.title(title)
+  plt.show()
+
  
 
   #CDF
@@ -190,6 +197,10 @@ def distribution_analytics(rev1,rev2, types):
   fig  = px.line(cdf, x= 'metric', y = 'cumsum', color = 'label',title=title)
 
   fig.show()
+  plt.figure(figsize=(8, 6))
+  sns.lineplot(data=cdf, x='metric', y='cumsum', hue='label')
+  plt.title(title)
+  plt.show()
 
 
   # PDF
@@ -207,6 +218,17 @@ def distribution_analytics(rev1,rev2, types):
   fig.update_layout(title=title)
 
   fig.show()
+    # Assuming hist_data is a list of NumPy arrays, group_labels is a list of labels,
+  # and freq is the bin size
+  fig, ax = plt.subplots(figsize=(8, 6))
+  for data, label in zip(hist_data, group_labels):
+        sns.histplot(data, label=label, bins=np.arange(0, max(data) + freq, freq), kde=True)
+
+  plt.legend()
+  plt.title(title)
+  plt.xlabel("Values")
+  plt.ylabel("Density")
+  plt.show()
 
  
 
